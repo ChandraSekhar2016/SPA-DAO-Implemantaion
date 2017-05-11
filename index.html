@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anjular JS 1.6.js</title>
+	<script src="assets/js/libs/angular/angular.min.js"></script>
+	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div ng-app="myApp">
+<div ng-controller="defaultController" style="margin-left: 400px;margin-top: 50px">
+<h3>{{greeting}}</h3>
+</div>
+
+<div ng-controller="contactController">
+<div style="margin-top: 50px;margin-left: 200px">
+<form>
+	<div class="form-group">
+	<label>FirstName: </label>
+	<input type="text"  name="fname" ng-model="contact.firstName" class="form-control">
+	</div>
+
+	<div class="form-group">
+	<label>LastName: </label>
+	<input type="text"  name="lname" ng-model="contact.lastName" class="form-control">
+	</div>
+
+	<div class="form-group">
+	<label>Email: </label>
+	<input type="email"  name="email" ng-model="contact.email" class="form-control">
+	</div>
+
+	<div class="form-group">
+	<label>Contact: </label>
+	<input type="text"  name="fname" ng-model="contact.contactNo" class="form-control">
+	</div>
+
+	<button type="submit" ng-click="save()">Save</button>
+
+	<h3>Data:</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Contact</th>
+		</tr>
+		<tr ng-repeat="c in contacts">
+		<td>{{c.firstName}} {{c.lastName}}</td>
+		<td>{{c.email}}</td>
+		<td>{{c.contactNo}}</td>
+		</tr>
+	</table> 
+
+</form>
+
+</div>
+</div>
+
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/services/contactService.js"></script>
+<script src="assets/js/controllers/defaultController.js"></script>
+<script src="assets/js/controllers/contactController.js"></script>
+
+</body>
+</html>
